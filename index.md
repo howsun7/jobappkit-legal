@@ -5,7 +5,8 @@ Last updated: January 1, 2026
 ## Overview
 
 JobAppKit Extension helps users avoid manual copy-paste by saving Upwork job
-details to their application tracker with one click.
+details to their application tracker with one click. We only access job page
+content when the user clicks "Save Job" and do not collect browsing history.
 
 ## Data Accessed
 
@@ -16,18 +17,23 @@ When you click "Save Job" on an Upwork job page, the extension reads:
 - Required skills
 - Job posting URL
 
+Client information is read from the job post page as displayed by Upwork and
+used only to save the job record.
+
 The extension also stores local settings:
 - API key
 - Preferences (e.g., auto-save, debug)
 
 ## How Data Is Used
 
-- Job data is sent only to `https://api.jobappkit.com/api/v1/jobs/capture/`
+- Job data is sent only to our JobAppKit API to create a saved job record
+- Job data is sent only to `https://api.jobappkit.com/`
 - Settings are stored locally in the browser and are not sent elsewhere
 
 ## Storage and Sharing
 
 - Settings and queued items are stored in Chrome storage on your device
+- Saved jobs are retained in the JobAppKit backend until the user deletes them
 - No analytics, tracking, or advertising services are used
 - Data is not sold or shared with third parties
 
